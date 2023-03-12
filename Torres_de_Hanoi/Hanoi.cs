@@ -12,9 +12,15 @@ namespace Torres_de_Hanoi
         public void mover_disco(Pila Origen, Pila Destino)
         {
             Disco disco = new Disco();
-            Disco d;
             disco = Origen.pop();
-            if(Destino.Top > disco.Valor)
+            Disco d;
+            
+
+            if (Destino.isEmpty())
+            {
+                Destino.push(disco);
+            }
+            if (Destino.Top > disco.Valor)
             {
                 Destino.push(disco);
             }
@@ -23,11 +29,7 @@ namespace Torres_de_Hanoi
                 d = Destino.pop();
                 Origen.push(d); 
             }
-            if (Origen.isEmpty())
-            {
-                Destino.pop(d);
-                Origen.push(d);
-            }
+            
             
         }
 
