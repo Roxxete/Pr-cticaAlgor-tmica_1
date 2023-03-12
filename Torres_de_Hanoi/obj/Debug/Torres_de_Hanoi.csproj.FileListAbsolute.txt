@@ -1,0 +1,8 @@
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.AssemblyReference.cache
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.SuggestedBindingRedirects.cache
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe.config
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.pdb
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
+C:\Users\Roxxete\Source\Repos\Roxxete\Pr-cticaAlgor-tmica_1\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb

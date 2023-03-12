@@ -9,7 +9,7 @@ namespace Torres_de_Hanoi
     class Hanoi
     {
         /*TODO: Implementar métodos*/
-        public void mover_disco(Pila a, Pila b)
+        public void mover_disco(Pila Origen, Pila Destino)
         {
 
         }
