@@ -8,7 +8,7 @@ namespace Torres_de_Hanoi
 {
     class Disco
     {
-        Disco()
+        public Disco()
         {
 
         }

@@ -16,6 +16,11 @@ namespace Torres_de_Hanoi
         
 
         /* TODO: Implementar métodos */
+
+        public Pila(int n)
+        {
+            this.Size = n;
+        }
         public Pila()
         {
             this.Size = 0;
@@ -32,12 +37,24 @@ namespace Torres_de_Hanoi
 
         public Disco pop()
         {
-            return null;
+            this.Size--;
+            Disco primero = this.Elementos[this.Elementos.Count - 1];
+            this.Elementos.Remove(primero);
+            this.Top = this.Elementos[this.Elementos.Count - 1].Valor;
+            return primero;
         }                
 
         public bool isEmpty()
         {
-            return true;
+            if (this.Size == 0) 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
     }
