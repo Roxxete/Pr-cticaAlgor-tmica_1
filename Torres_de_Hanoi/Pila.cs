@@ -11,8 +11,8 @@ namespace Torres_de_Hanoi
         public int Size { get; set; }
         
         public int Top { get; set; }
-        
-        public List<Disco> Elementos { get; set; }
+
+        public List<Disco> Elementos { get; set; } = new List<Disco>();
         
 
         /* TODO: Implementar métodos */
@@ -20,6 +20,13 @@ namespace Torres_de_Hanoi
         public Pila(int n)
         {
             this.Size = n;
+            for (int i = n; i > 0; i--)
+            {
+                Disco disco = new Disco();
+                disco.Valor = i;
+                this.Elementos.Add(disco);
+            }
+            this.Top = this.Elementos[this.Size - 1].Valor;
         }
         public Pila()
         {
@@ -37,12 +44,17 @@ namespace Torres_de_Hanoi
 
         public Disco pop()
         {
+            Disco disco = new Disco();
+            disco = this.Elementos[this.Size - 1];
+            this.Elementos.Remove(disco);
             this.Size--;
-            Disco primero = this.Elementos[this.Elementos.Count - 1];
-            this.Elementos.Remove(primero);
-            this.Top = this.Elementos[this.Elementos.Count - 1].Valor;
-            return primero;
-        }                
+            if (this.Size != 0)
+            {
+                this.Top = this.Elementos[this.Size - 1].Valor;
+
+            }
+            return disco;
+        }
 
         public bool isEmpty()
         {
