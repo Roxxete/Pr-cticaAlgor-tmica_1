@@ -57,6 +57,7 @@ namespace Torres_de_Hanoi
             }
             Console.WriteLine();
 
+            //Si el número no es par
             if (n % 2 != 0)
             {
                 while (Destino.Size != n)
@@ -147,7 +148,7 @@ namespace Torres_de_Hanoi
             {
                 while (Destino.Size != n)
                 {
-                    //-----------------INI AuX------------------
+                    //-----------------INI AUX------------------
                     mover_disco(Origen, Auxiliar);
                     m++;
                     Console.WriteLine("Situación tras el movimiento: " + m);

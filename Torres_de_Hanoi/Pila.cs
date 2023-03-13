@@ -24,7 +24,7 @@ namespace Torres_de_Hanoi
         }
 
 
-        //Constructor
+        //Constructor pila inicial
         public Pila(int n)
         {
             for (int i = n; i > 0; i--)
