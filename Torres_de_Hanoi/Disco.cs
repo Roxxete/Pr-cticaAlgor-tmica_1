@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Torres_de_Hanoi
 {
+    //Esta clase representa un objeto individual disco.
     class Disco
     {
         public Disco()

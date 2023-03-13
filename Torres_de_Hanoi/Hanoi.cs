@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace Torres_de_Hanoi
 {
+    //Esta clase representa la lógica de los movimientos y la resolución del problema
     class Hanoi
     {
+        //Nos permite mover un disco entre dos palos
         public void mover_disco(Pila Origen, Pila Destino)
         {
+            //Representa el movimiento entre Pilas
             if (Destino.isEmpty())
             {
                 Destino.push(Origen.pop());
             }
             else
             {
+                //NORMA:
+                //Si el disco TOP del palo origen es menor que el disco TOP del palo Destino, se mueve de Origen a Destino.
                 if (Origen.Top < Destino.Top && !Origen.isEmpty())
                 {
                     Destino.push(Origen.pop());
@@ -32,20 +37,20 @@ namespace Torres_de_Hanoi
         public int iterativo(int n, Pila Origen, Pila Auxiliar, Pila Destino)
         {
             int m = 0;
-            Console.WriteLine("Situación inical:");
-            Console.Write("Torre ini: ");
+            Console.WriteLine("Situación inicial:");
+            Console.Write("Torre ORÍGEN: ");
             for (int i = 0; i < Origen.Size; i++)
             {
                 Console.Write(Origen.Elementos[i].Valor + " ");
             }
             Console.WriteLine();
-            Console.Write("Torre aux: ");
+            Console.Write("Torre AUXILIAR: ");
             for (int i = 0; i < Auxiliar.Size; i++)
             {
                 Console.Write(Auxiliar.Elementos[i].Valor + " ");
             }
             Console.WriteLine();
-            Console.Write("Torre fin: ");
+            Console.Write("Torre DESTINO: ");
             for (int i = 0; i < Destino.Size; i++)
             {
                 Console.Write(Destino.Elementos[i].Valor + " ");
@@ -60,19 +65,19 @@ namespace Torres_de_Hanoi
                     mover_disco(Origen, Destino);
                     m++;
                     Console.WriteLine("Situación tras el movimiento: " + m);
-                    Console.Write("Torre ini: ");
+                    Console.Write("Torre ORÍGEN: ");
                     for (int i = 0; i < Origen.Size; i++)
                     {
                         Console.Write(Origen.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre aux: ");
+                    Console.Write("Torre AUXILIAR: ");
                     for (int i = 0; i < Auxiliar.Size; i++)
                     {
                         Console.Write(Auxiliar.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre fin: ");
+                    Console.Write("Torre DESTINO: ");
                     for (int i = 0; i < Destino.Size; i++)
                     {
                         Console.Write(Destino.Elementos[i].Valor + " ");
@@ -87,19 +92,19 @@ namespace Torres_de_Hanoi
                     mover_disco(Origen, Auxiliar);
                     m++;
                     Console.WriteLine("Situación tras el movimiento: " + m);
-                    Console.Write("Torre ini: ");
+                    Console.Write("Torre ORÍGEN: ");
                     for (int i = 0; i < Origen.Size; i++)
                     {
                         Console.Write(Origen.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre aux: ");
+                    Console.Write("Torre AUXILIAR: ");
                     for (int i = 0; i < Auxiliar.Size; i++)
                     {
                         Console.Write(Auxiliar.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre fin: ");
+                    Console.Write("Torre DESTINO: ");
                     for (int i = 0; i < Destino.Size; i++)
                     {
                         Console.Write(Destino.Elementos[i].Valor + " ");
@@ -114,19 +119,19 @@ namespace Torres_de_Hanoi
                     mover_disco(Auxiliar, Destino);
                     m++;
                     Console.WriteLine("Situación tras el movimiento: " + m);
-                    Console.Write("Torre ini: ");
+                    Console.Write("Torre ORÍGEN: ");
                     for (int i = 0; i < Origen.Size; i++)
                     {
                         Console.Write(Origen.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre aux: ");
+                    Console.Write("Torre AUXILIAR: ");
                     for (int i = 0; i < Auxiliar.Size; i++)
                     {
                         Console.Write(Auxiliar.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre fin: ");
+                    Console.Write("Torre DESTINO: ");
                     for (int i = 0; i < Destino.Size; i++)
                     {
                         Console.Write(Destino.Elementos[i].Valor + " ");
@@ -146,19 +151,19 @@ namespace Torres_de_Hanoi
                     mover_disco(Origen, Auxiliar);
                     m++;
                     Console.WriteLine("Situación tras el movimiento: " + m);
-                    Console.Write("Torre ini: ");
+                    Console.Write("Torre ORÍGEN: ");
                     for (int i = 0; i < Origen.Size; i++)
                     {
                         Console.Write(Origen.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre aux: ");
+                    Console.Write("Torre AUXILIAR: ");
                     for (int i = 0; i < Auxiliar.Size; i++)
                     {
                         Console.Write(Auxiliar.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre fin: ");
+                    Console.Write("Torre DESTINO: ");
                     for (int i = 0; i < Destino.Size; i++)
                     {
                         Console.Write(Destino.Elementos[i].Valor + " ");
@@ -173,19 +178,19 @@ namespace Torres_de_Hanoi
                     mover_disco(Origen, Destino);
                     m++;
                     Console.WriteLine("Situación tras el movimiento: " + m);
-                    Console.Write("Torre ini: ");
+                    Console.Write("Torre ORÍGEN: ");
                     for (int i = 0; i < Origen.Size; i++)
                     {
                         Console.Write(Origen.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre aux: ");
+                    Console.Write("Torre AUXILIAR: ");
                     for (int i = 0; i < Auxiliar.Size; i++)
                     {
                         Console.Write(Auxiliar.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre fin: ");
+                    Console.Write("Torre DESTINO: ");
                     for (int i = 0; i < Destino.Size; i++)
                     {
                         Console.Write(Destino.Elementos[i].Valor + " ");
@@ -200,19 +205,19 @@ namespace Torres_de_Hanoi
                     mover_disco(Auxiliar, Destino);
                     m++;
                     Console.WriteLine("Situación tras el movimiento: " + m);
-                    Console.Write("Torre ini: ");
+                    Console.Write("Torre ORÍGEN: ");
                     for (int i = 0; i < Origen.Size; i++)
                     {
                         Console.Write(Origen.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre aux: ");
+                    Console.Write("Torre AUXILIAR: ");
                     for (int i = 0; i < Auxiliar.Size; i++)
                     {
                         Console.Write(Auxiliar.Elementos[i].Valor + " ");
                     }
                     Console.WriteLine();
-                    Console.Write("Torre fin: ");
+                    Console.Write("Torre DESTINO: ");
                     for (int i = 0; i < Destino.Size; i++)
                     {
                         Console.Write(Destino.Elementos[i].Valor + " ");
