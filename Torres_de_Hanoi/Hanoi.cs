@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,184 +8,223 @@ namespace Torres_de_Hanoi
 {
     class Hanoi
     {
-        /*TODO: Implementar métodos*/
-        public void mover_disco(Pila Origen, Pila Destino)
+        public void mover_disco(Pila a, Pila b)
         {
-            Disco disco = new Disco();
-            disco = Origen.pop();
-            Disco d;
-            
-
-            if (Destino.isEmpty())
+            if (b.isEmpty())
             {
-                Destino.push(disco);
-            }
-            if (Destino.Top > disco.Valor)
-            {
-                Destino.push(disco);
+                b.push(a.pop());
             }
             else
             {
-                d = Destino.pop();
-                Origen.push(d); 
+                if (a.Top < b.Top && !a.isEmpty())
+                {
+                    b.push(a.pop());
+                }
+                else
+                {
+                    a.push(b.pop());
+                }
             }
-            
-            
+
         }
 
-        public int iterativo(int n, Pila Origen, Pila Destino, Pila Aux)
+
+        public int iterativo(int n, Pila ini, Pila aux, Pila fin)
         {
-            int cont = 0;
-            Console.WriteLine("INICIO");
-            Console.Write("Torre ORÍGEN: ");
-            for(int i = 0; i < Origen.Size; i++)
+            int m = 0;
+            Console.WriteLine("Situación inical:");
+            Console.Write("Torre ini: ");
+            for (int i = 0; i < ini.Size; i++)
             {
-                Console.Write(Origen.Elementos[i].Valor);
+                Console.Write(ini.Elementos[i].Valor + " ");
             }
-            Console.Write("Torre AUXILIAR: ");
-            for (int i = 0; i < Aux.Size; i++)
+            Console.WriteLine();
+            Console.Write("Torre aux: ");
+            for (int i = 0; i < aux.Size; i++)
             {
-                Console.Write(Aux.Elementos[i].Valor);
+                Console.Write(aux.Elementos[i].Valor + " ");
             }
-                Console.Write("Torre DESTINO: ");
-            for (int i = 0; i < Destino.Size; i++)
+            Console.WriteLine();
+            Console.Write("Torre fin: ");
+            for (int i = 0; i < fin.Size; i++)
             {
-                Console.Write(Destino.Elementos[i].Valor);
+                Console.Write(fin.Elementos[i].Valor + " ");
             }
             Console.WriteLine();
 
-            if( n%2 != 0)
+            if (n % 2 != 0)
             {
-                 while (Aux.Size != n)
+                while (fin.Size != n)
+                {
+                    //-----------------INI FIN------------------
+                    mover_disco(ini, fin);
+                    m++;
+                    Console.WriteLine("Situación tras el movimiento: " + m);
+                    Console.Write("Torre ini: ");
+                    for (int i = 0; i < ini.Size; i++)
                     {
-                        mover_disco(Origen, Destino);
-                        cont++;
-                        Console.WriteLine("Situación tras movimiento" + cont);
-                        Console.Write("Torre ORÍGEN: ");
-                        for (int i = 0; i < Origen.Size; i++)
-                        {
-                            Console.Write(Origen.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre AUXILIAR: ");
-                        for (int i = 0; i < Aux.Size; i++)
-                        {
-                            Console.Write(Aux.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre DESTINO: ");
-                        for (int i = 0; i < Destino.Size; i++)
-                        {
-                            Console.Write(Destino.Elementos[i].Valor);
-                        }
-                        Console.WriteLine();
-                        mover_disco(Origen, Aux);
-                        cont++;
-                        Console.WriteLine("Situación tras movimiento" + cont);
-                        Console.Write("Torre ORÍGEN: ");
-                        for (int i = 0; i < Origen.Size; i++)
-                        {
-                            Console.Write(Origen.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre AUXILIAR: ");
-                        for (int i = 0; i < Aux.Size; i++)
-                        {
-                            Console.Write(Aux.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre DESTINO: ");
-                        for (int i = 0; i < Destino.Size; i++)
-                        {
-                            Console.Write(Destino.Elementos[i].Valor);
-                        }
-                        Console.WriteLine();
-                        mover_disco(Aux, Destino);
-                        cont++;
-                        Console.WriteLine("Situación tras movimiento" + cont);
-                        Console.Write("Torre ORÍGEN: ");
-                        for (int i = 0; i < Origen.Size; i++)
-                        {
-                            Console.Write(Origen.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre AUXILIAR: ");
-                        for (int i = 0; i < Aux.Size; i++)
-                        {
-                            Console.Write(Aux.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre DESTINO: ");
-                        for (int i = 0; i < Destino.Size; i++)
-                        {
-                            Console.Write(Destino.Elementos[i].Valor);
-                        }
-                        Console.WriteLine();
+                        Console.Write(ini.Elementos[i].Valor + " ");
                     }
-            }
-
-            if (n % 2 == 0)
-            {
-               while (Aux.Size != n)
+                    Console.WriteLine();
+                    Console.Write("Torre aux: ");
+                    for (int i = 0; i < aux.Size; i++)
                     {
-                        mover_disco(Origen, Aux);
-                        cont++;
-                        Console.WriteLine("Situación tras movimiento" + cont);
-                        Console.Write("Torre ORÍGEN: ");
-                        for (int i = 0; i < Origen.Size; i++)
-                        {
-                            Console.Write(Origen.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre AUXILIAR: ");
-                        for (int i = 0; i < Aux.Size; i++)
-                        {
-                            Console.Write(Aux.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre DESTINO: ");
-                        for (int i = 0; i < Destino.Size; i++)
-                        {
-                            Console.Write(Destino.Elementos[i].Valor);
-                        }
-                        Console.WriteLine();
-                        mover_disco(Origen, Destino);
-                        cont++;
-                        Console.WriteLine("Situación tras movimiento" + cont);
-                        Console.Write("Torre ORÍGEN: ");
-                        for (int i = 0; i < Origen.Size; i++)
-                        {
-                            Console.Write(Origen.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre AUXILIAR: ");
-                        for (int i = 0; i < Aux.Size; i++)
-                        {
-                            Console.Write(Aux.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre DESTINO: ");
-                        for (int i = 0; i < Destino.Size; i++)
-                        {
-                            Console.Write(Destino.Elementos[i].Valor);
-                        }
-                        Console.WriteLine();
-                        mover_disco(Aux, Destino);
-                        cont++;
-                        Console.WriteLine("Situación tras movimiento" + cont);
-                        Console.Write("Torre ORÍGEN: ");
-                        for (int i = 0; i < Origen.Size; i++)
-                        {
-                            Console.Write(Origen.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre AUXILIAR: ");
-                        for (int i = 0; i < Aux.Size; i++)
-                        {
-                            Console.Write(Aux.Elementos[i].Valor);
-                        }
-                        Console.Write("Torre DESTINO: ");
-                        for (int i = 0; i < Destino.Size; i++)
-                        {
-                            Console.Write(Destino.Elementos[i].Valor);
-                        }
-                        Console.WriteLine();
+                        Console.Write(aux.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre fin: ");
+                    for (int i = 0; i < fin.Size; i++)
+                    {
+                        Console.Write(fin.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    /*if (fin.Size == n)
+                    {
+                        return m;
+                    }*/
+
+                    //-----------------INI AUX------------------
+                    mover_disco(ini, aux);
+                    m++;
+                    Console.WriteLine("Situación tras el movimiento: " + m);
+                    Console.Write("Torre ini: ");
+                    for (int i = 0; i < ini.Size; i++)
+                    {
+                        Console.Write(ini.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre aux: ");
+                    for (int i = 0; i < aux.Size; i++)
+                    {
+                        Console.Write(aux.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre fin: ");
+                    for (int i = 0; i < fin.Size; i++)
+                    {
+                        Console.Write(fin.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    /*if (fin.Size == n)
+                    {
+                        return m;
+                    }*/
+
+                    //-----------------AUX FIN------------------
+                    mover_disco(aux, fin);
+                    m++;
+                    Console.WriteLine("Situación tras el movimiento: " + m);
+                    Console.Write("Torre ini: ");
+                    for (int i = 0; i < ini.Size; i++)
+                    {
+                        Console.Write(ini.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre aux: ");
+                    for (int i = 0; i < aux.Size; i++)
+                    {
+                        Console.Write(aux.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre fin: ");
+                    for (int i = 0; i < fin.Size; i++)
+                    {
+                        Console.Write(fin.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    if (fin.Size == n)
+                    {
+                       return m;
+                    }
+                }
+            }
+            else
+            {
+                while (fin.Size != n)
+                {
+                    //-----------------INI AuX------------------
+                    mover_disco(ini, aux);
+                    m++;
+                    Console.WriteLine("Situación tras el movimiento: " + m);
+                    Console.Write("Torre ini: ");
+                    for (int i = 0; i < ini.Size; i++)
+                    {
+                        Console.Write(ini.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre aux: ");
+                    for (int i = 0; i < aux.Size; i++)
+                    {
+                        Console.Write(aux.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre fin: ");
+                    for (int i = 0; i < fin.Size; i++)
+                    {
+                        Console.Write(fin.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    if (fin.Size == n)
+                    {
+                        return m;
                     }
 
+                    //-----------------INI FIN------------------
+                    mover_disco(ini, fin);
+                    m++;
+                    Console.WriteLine("Situación tras el movimiento: " + m);
+                    Console.Write("Torre ini: ");
+                    for (int i = 0; i < ini.Size; i++)
+                    {
+                        Console.Write(ini.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre aux: ");
+                    for (int i = 0; i < aux.Size; i++)
+                    {
+                        Console.Write(aux.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre fin: ");
+                    for (int i = 0; i < fin.Size; i++)
+                    {
+                        Console.Write(fin.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    if (fin.Size == n)
+                    {
+                        return m;
+                    }
+
+                    //-----------------AUX FIN------------------
+                    mover_disco(aux, fin);
+                    m++;
+                    Console.WriteLine("Situación tras el movimiento: " + m);
+                    Console.Write("Torre ini: ");
+                    for (int i = 0; i < ini.Size; i++)
+                    {
+                        Console.Write(ini.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre aux: ");
+                    for (int i = 0; i < aux.Size; i++)
+                    {
+                        Console.Write(aux.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("Torre fin: ");
+                    for (int i = 0; i < fin.Size; i++)
+                    {
+                        Console.Write(fin.Elementos[i].Valor + " ");
+                    }
+                    Console.WriteLine();
+                    if (fin.Size == n)
+                    {
+                    return m;
+                    }
+                }
             }
-            return cont;
+            return m;
         }
-
-            
     }
-
 }
